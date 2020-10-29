@@ -11,7 +11,7 @@ SERVER = socket.gethostbyname(HOST_NAME)
 server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 server.bind((SERVER, PORT))  # passed as tuple
 FORMAT = 'utf-8'
-DISCONNECT_MSG = "disconnect!"
+DISCONNECT_MSG = "!disconnect"
 
 
 def Init():  # this function will be called to initilize the server
