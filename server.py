@@ -33,7 +33,7 @@ def ClientHandler(addr, conn):
     print(addr + "has connected.")
     connected = True
     while connected:
-        msg_len = conn.recv(HEADER5050).decode(FORMAT)
+        msg_len = conn.recv(HEADER).decode(FORMAT)
         if msg_length: #will ignore any messages with are 0, usually connection a 0 message is sent
             msg_length = int(msg_length)
             # code will stop here until a msg is received from the client, it will receive a HEADER number of bytes and it will decode the message from its bytes format to a string.
