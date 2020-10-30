@@ -25,8 +25,7 @@ def Init():  # this function will be called to initilize the server
         thread.start()
 
         # will display all active threads, we are subtracting 1 since we will always have 1 active thread at minimum even without connections
-        print("THE NUMBER OF ACTIVE CONNECTIONS IS CURRENTLY" +
-              threading.active_count() - 1)
+        print(f"THE NUMBER OF ACTIVE CONNECTIONS IS CURRENTLY"  {threading.active_count() - 1}")
 
 
 def ClientHandler(addr, conn):
@@ -38,7 +37,7 @@ def ClientHandler(addr, conn):
             msg_length = int(msg_length)
             # code will stop here until a msg is received from the client, it will receive a HEADER number of bytes and it will decode the message from its bytes format to a string.
             msg_len = int(msg_len)  # convert message length to an int
-            msg = conn.recv(msg_len).decode(FORMAT)
+            msg = conn.recv(msg_len).deco8de(FORMAT)
             # displays message
             print(addr + " has sent the following message: " + msg)
             if msg == DISCONNECT_MSG:  # if client asks to disconnect it will disconnect
