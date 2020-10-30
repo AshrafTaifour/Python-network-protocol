@@ -25,7 +25,7 @@ def Init():  # this function will be called to initilize the server
         thread.start()
 
         # will display all active threads, we are subtracting 1 since we will always have 1 active thread at minimum even without connections
-        print(f"THE NUMBER OF ACTIVE CONNECTIONS IS CURRENTLY"  {threading.active_count() - 1}")
+        print(f"THE NUMBER OF ACTIVE CONNECTIONS IS CURRENTLY  {threading.active_count() - 1}")
 
 
 def ClientHandler(addr, conn):
