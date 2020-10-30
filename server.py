@@ -34,13 +34,15 @@ def ClientHandler(addr, conn):
     connected = True
     while connected:
         msg_len = conn.recv(HEADER).decode(FORMAT)
-        # code will stop here until a msg is received from the client, it will receive a HEADER number of bytes and it will decode the message from its bytes format to a string.
-        msg_len = int(msg_len)  # convert message length to an int
-        msg = conn.recv(msg_len).decode(FORMAT)
-        # displays message
-        print(addr + " has sent the following message: " + msg)
-        if msg == DISCONNECT_MSG:  # if client asks to disconnect it will disconnect
-            connected = False
+        if msg_length:
+            msg_length = int(msg_length)
+            # code will stop here until a msg is received from the client, it will receive a HEADER number of bytes and it will decode the message from its bytes format to a string.
+            msg_len = int(msg_len)  # convert message length to an int
+            msg = conn.recv(msg_len).decode(FORMAT)
+            # displays message
+            print(addr + " has sent the following message: " + msg)
+            if msg == DISCONNECT_MSG:  # if client asks to disconnect it will disconnect
+                connected = False
 
     conn.close()
 
