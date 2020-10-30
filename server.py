@@ -36,7 +36,7 @@ def Init():  # this function will be called to initilize the server
         # will wait for a connection and store address in addr and a socket object in conn
         conn, addr = server.accept()
         # will start a thread where the function ClientHandler will be used to handle the upcoming connection.
-        thread = threading.Thread(target=ClientHandler, args=(conn, addr))
+        thread = threading.Thread(target=ClientHandler, args=(addr,conn))
         thread.start()
 
         # will display all active threads, we are subtracting 1 since we will always have 1 active thread at minimum even without connections
