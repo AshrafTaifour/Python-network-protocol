@@ -16,7 +16,7 @@ DISCONNECT_MSG = "!disconnect"
 
 def Init():  # this function will be called to initilize the server
     server.listen()
-    print("Job Creator is listening on " + SERVER)
+    print(f"Job Creator is listening on  + {SERVER}")
     while True:  # server will always be listening
         # will wait for a connection and store address in addr and a socket object in conn
         conn, addr = server.accept()
@@ -29,7 +29,7 @@ def Init():  # this function will be called to initilize the server
 
 
 def ClientHandler(addr, conn):
-    print(addr + "has connected.")
+    print(f"{addr} has connected.")
     connected = True
     while connected:
         msg_len = conn.recv(HEADER).decode(FORMAT)
