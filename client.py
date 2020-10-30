@@ -1,6 +1,6 @@
 import socket #socket object will be used to make the connection
 #CONSTANTS
-HEADER = 124 # wILL BE THE HEADER LENGTH
+HEADER = 64 # wILL BE THE HEADER LENGTH
 PORT = 1996  # Port that the socket will be using
 FORMAT = 'utf-8' #THIS WILL BE THE ENCODING FORMAT WHEN SENDING HEADER
 DISCONNECT_MESSAGE = "!disconnect" #WHEN CLEINT DISCONNECTS OR TERMINATES CONNECTION
