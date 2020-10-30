@@ -29,7 +29,7 @@ def Init():  # this function will be called to initilize the server
 
 
 def ClientHandler(addr, conn):
-    print(f"{addr} has connected.")
+    print(f" {addr} has connected.")
     connected = True
     while connected:
         msg_len = conn.recv(HEADER).decode(FORMAT)
