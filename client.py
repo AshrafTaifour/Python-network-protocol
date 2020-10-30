@@ -17,3 +17,10 @@ def send(msg): #DEFINED FUNCTION TO SEND MSG FROM CLIENT
     client.send(send_length) #send info to server first of the padded header message
     client.send(message) #send encoded message to server
     print(client.recv(2048).decode(FORMAT)) #print receive message from 
+
+
+send("Hello World!") #first message to send
+send("Computer Network is fun!") # second message to send
+input() # when user hits enter or any input it will now disconnect
+send("Disconnecting now!") # disconnect message
+send(DISCONNECT_MESSAGE) #send disconnect message
