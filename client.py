@@ -20,7 +20,7 @@ def send(msg): #DEFINED FUNCTION TO SEND MSG FROM CLIENT
 
 
 send("Hello World!") #first message to send
-input()
+
 send("Computer Network is fun!") # second message to send
 input() # when user hits enter or any input it will now disconnect
 send("Disconnecting now!") # disconnect message
