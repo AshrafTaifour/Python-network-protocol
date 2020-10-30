@@ -39,7 +39,7 @@ def ClientHandler(addr, conn):
             msg_len = int(msg_len)  # convert message length to an int
             msg = conn.recv(msg_len).deco8de(FORMAT)
             # displays message
-            print(addr + " has sent the following message: " + msg)
+            print(f"{addr}  has sent the following message: {msg}")
             if msg == DISCONNECT_MSG:  # if client asks to disconnect it will disconnect
                 connected = False
 
