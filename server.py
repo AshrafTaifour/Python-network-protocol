@@ -3,7 +3,7 @@ import threading
 
 # The following variables are constants
 HEADER = 64  # Will contain information about message properties
-PORT = 1996  # Port that the socket will be using
+PORT = 5050  # Port that the socket will be using
 HOST_NAME = socket.gethostname()  # will get the name of the machine
 # will get the IP address by using the machine name
 SERVER = socket.gethostbyname(HOST_NAME)
@@ -33,7 +33,7 @@ def ClientHandler(addr, conn):
     print(addr + "has connected.")
     connected = True
     while connected:
-        msg_len = conn.recv(HEADER).decode(FORMAT)
+        msg_len = conn.recv(HEADER5050).decode(FORMAT)
         if msg_length: #will ignore any messages with are 0, usually connection a 0 message is sent
             msg_length = int(msg_length)
             # code will stop here until a msg is received from the client, it will receive a HEADER number of bytes and it will decode the message from its bytes format to a string.
