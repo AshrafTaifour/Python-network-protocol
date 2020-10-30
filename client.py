@@ -9,3 +9,11 @@ ADDR = (SERVER, PORT) #ADDRESS WILL BE TUPLE OF IP ADDRESS OF SERVER AND PORT#
 client = socket.socket(socket.AF_INET, socket.SOCK_STREAM) #CREATE NEW VARIABLE CALLED CLIENT AND MAKE IT AN OBJECT OF THIS CONNECTION
 client.connect(ADDR) #CLIENT CONNECTS TO ABOVE IP ADDRESS
 
+def send(msg): #DEFINED FUNCTION TO SEND MSG FROM CLIENT
+    message = msg.encode(FORMAT) #TAKE MSG AND ENCOD IT
+    msg_length = len(message) #GET LENGTH OF ENCODED MESSAGE 
+    send_length = str(msg_length).encode(FORMAT) #SEND_length for header is equal to encoded message length
+    send_length += b' ' * (HEADER - len(send_length)) #padd the message up to 124 bits adding b' ' byte of space 
+    client.send(send_length) #send info to server first of the padded header message
+    client.send(message) #send encoded message to server
+    print(client.recv(2048).decode(FORMAT)) #print receive message from 
